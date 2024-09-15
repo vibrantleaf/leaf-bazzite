@@ -5,18 +5,8 @@ set -ouex pipefail
 RELEASE="$(rpm -E %fedora)"
 
 
-### Install packages
+rpm-ostree install libvirt-client qemu-kvm virt-install virt-manager virt-viewer swtpm tuned bridge-utils
 
-# Packages can be installed from any enabled yum repo on the image.
-# RPMfusion repos are available by default in ublue main images
-# List of rpmfusion packages can be found here:
-# https://mirrors.rpmfusion.org/mirrorlist?path=free/fedora/updates/39/x86_64/repoview/index.html&protocol=https&redirect=1
-
-# this installs a package from fedora repos
-rpm-ostree install libvirt-client qemu-kvm virt-install virt-manager virt-viewer swtpm
-# this would install a package from rpmfusion
-# rpm-ostree install vlc
-
-#### Example for enabling a System Unit File
+rpm-ostree kargs --append-if-missing="amd_iommu=on" --append-if-missing="iommu=pt" --append-if-missing="kvm_amd.nested=1" --append-if-missing="vfio_iommu_type1.allow_unsafe_interrupts=1" --append-if-missing="kvm.ignore_msrs=1" --append-if-missing="default_huepagesz=1G" --hugepagesz="1G"
 
 systemctl enable podman.socket
