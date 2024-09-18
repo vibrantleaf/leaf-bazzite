@@ -1,5 +1,3 @@
-# vim: set ft=make :
-
 # set optimal kernel options for virtualization with a AMD cpu 
 unset-virtualization-kernel-options-amd:
     rpm-ostree kargs \
