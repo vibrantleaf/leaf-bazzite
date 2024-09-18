@@ -33,6 +33,17 @@ curl -Lo /etc/yum.repos.d/_copr_matte-schwartz_sunshine.repo https://copr.fedora
 sed -i 's@gpgcheck=1@gpgcheck=0@g' /etc/yum.repos.d/tailscale.repo
 # End of COPR/rpm-repos
 
+# Start of Just files tests
+
+echo "Started Testing Justfiles"
+find "/" -type f -name "*.just" | while read -r file do
+    echo "Checking syntax: $file"
+    just --unstable --fmt --check -f $file || { exit 1; }
+  done # yoinked from https://github.com/ublue-os/just-action/
+echo "Finished Testing Justfiles"
+
+# End of Just files tests
+
 # Start of Virtualization stack
 
 echo "Started Installing The Virtualization Stack"
