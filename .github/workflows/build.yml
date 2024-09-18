@@ -35,9 +35,6 @@ jobs:
 
       - name: Maximize build space
         uses: ublue-os/remove-unwanted-software@v7
-        
-      - name: Check just syntax
-        uses: ublue-os/just-action@v2
 
       - name: Generate tags
         id: generate-tags
@@ -76,7 +73,9 @@ jobs:
           for TAG in "${BUILD_TAGS[@]}"; do
               echo "${TAG}"
           done
+
           echo "alias_tags=${alias_tags[*]}" >> $GITHUB_OUTPUT
+
       # Build metadata
       - name: Image Metadata
         uses: docker/metadata-action@v5
