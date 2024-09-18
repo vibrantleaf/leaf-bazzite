@@ -44,6 +44,27 @@ sed -i 's@gpgcheck=1@gpgcheck=0@g' /etc/yum.repos.d/tailscale.repo
 
 # End of Just files tests
 
+# Start of Removing Things i dont want on the image
+
+echo "Started Removing Things that i dont want on the image"
+rpm-ostree override remove fedora-chromium-config \
+ fedora-chromium-config-gnome \
+ gnome-browser-connector \
+ gnome-shell-extension-bazzite-menu \
+ gnome-shell-extension-compiz-alike-magic-lamp-effect \
+ gnome-shell-extension-compiz-windows-effect \
+ gnome-shell-extension-gamerzilla \
+ gnome-shell-extension-just-perfection \
+ gnome-shell-extension-launch-new-instance \
+ gnome-shell-extension-places-menu \
+ gnome-shell-extension-window-list \
+ firefox-langauge-packs \
+ firefox
+echo "Finished Removing Things that i dont want on the image"
+
+# End of Removing Things i dont want on the image
+
+
 # Start of Virtualization stack
 
 echo "Started Installing The Virtualization Stack"
