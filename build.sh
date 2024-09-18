@@ -57,9 +57,7 @@ rpm-ostree override remove fedora-chromium-config \
  gnome-shell-extension-just-perfection \
  gnome-shell-extension-launch-new-instance \
  gnome-shell-extension-places-menu \
- gnome-shell-extension-window-list \
- firefox-langauge-packs \
- firefox
+ gnome-shell-extension-window-list
 echo "Finished Removing Things that i dont want on the image"
 
 # End of Removing Things i dont want on the image
