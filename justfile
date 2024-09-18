@@ -19,7 +19,7 @@ explore-local-build:
 
 # just explore the build on ghcr
 explore-gh-build:
-  podman run -it --rm --name myBazziteGhcrImageTest ghcr.io/vibrantleaf/my-personal-bazzite:latest /usr/bin/bash
+  podman run -it --rm --name myBazziteGhcrImageTest ghcr.io/vibrantleaf/leaf-bazzite:latest /usr/bin/bash
 
 # just remove the one-off local test build
 remove-local-build:
@@ -28,4 +28,4 @@ remove-local-build:
 
 # just remove the build on ghcr
 remove-local-build:
-  podman image rm -f ghcr.io/vibrantleaf/my-personal-bazzite
+  podman image rm -f ghcr.io/vibrantleaf/leaf-bazzite
