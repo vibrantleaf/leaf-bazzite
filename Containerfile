@@ -14,5 +14,6 @@ RUN mkdir -p /var/lib/alternatives && \
 
 RUN rm -rf /var/cache/* && \
     rm -rf /var/tmp/* && \
+    rm -f /etc/yum.repos.d/_copr* /etc/yum.repos.d/tailscale.repo && \
     /usr/libexec/containerbuild/cleanup.sh && \
     ostree container commit
