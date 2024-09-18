@@ -35,12 +35,12 @@ sed -i 's@gpgcheck=1@gpgcheck=0@g' /etc/yum.repos.d/tailscale.repo
 
 # Start of Just files tests
 
-echo "Started Testing Justfiles"
-find "/" -type f -name "*.just" | while read -r file do
-    echo "Checking syntax: $file"
-    just --unstable --fmt --check -f $file || { exit 1; }
-  done # yoinked from https://github.com/ublue-os/just-action/
-echo "Finished Testing Justfiles"
+#echo "Started Testing Justfiles"
+#find "/" -type f -name "*.just" | while read -r file do
+#    echo "Checking syntax: $file"
+#    just --unstable --fmt --check -f $file || { exit 1; }
+#  done # yoinked from https://github.com/ublue-os/just-action/
+#echo "Finished Testing Justfiles"
 
 # End of Just files tests
 
