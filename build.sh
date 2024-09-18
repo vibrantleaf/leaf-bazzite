@@ -38,7 +38,6 @@ echo "Finished Installing The Virtualization Stack"
 echo "Started Installing Sunshine"
 echo "Grabbing The lizardbyte Sunshine COPR"
 curl -Lo /etc/yum.repos.d/lizardbyte-Sunshine-fedora-$RELEASE.repo https://copr.fedorainfracloud.org/coprs/lizardbyte/Sunshine/repo/fedora-$RELEASE/lizardbyte-Sunshine-fedora-$RELEASE.repo
-curl -Lo /var/cache/lizardbyte-Sunshine-fedora.gpg https://download.copr.fedorainfracloud.org/results/lizardbyte/Sunshine/pubkey.gpg
 sed -i 's@gpgcheck=1@gpgcheck=0@g' /etc/yum.repos.d/lizardbyte-Sunshine-fedora-$RELEASE.repo  #hack to just to get this to build NEED TO FIX LATER
 echo "Installing The sunshine Package"
 rpm-ostree install sunshine
